@@ -1,0 +1,13 @@
+{
+    "log":"../test/access.log", 
+    "delimiter":"|", 
+    "timestamp":0, 
+    "remote_addr":2, 
+    "request":3, 
+    "http_user_agent":4,
+    "protocol":"http",
+    "port":80,
+    "destinationMap": {"127.0.0.2":"preprod.local"},
+    "testScriptFormat":"json",
+    "filter":".*"
+}
