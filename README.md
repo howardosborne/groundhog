@@ -2,17 +2,17 @@
 Groundhog is a utility for testing the impact of changes made to webcaches.
 It works by taking the requests made in access logs and providing a user-friendly way to 
 replay part or all of the logs.
-The results can then be chewed over to determine whether to promote the configuration change to Live or tweak it some more.
+The results can then be chewed over to determine whether to promote the configuration change to live or tweak it some more.
 
-##why make it
+## Why make it?
 Caching is a fundamental part of performance optimisation
-The configuration can be powerful and complex 
-Not always obvious what the consequences of making a change would be.
-Can have unlooked for side effects
-is a tradeoff between speed and accuracy, such as with market data
-With Groundhog changes can be tested out and the consequences evaluated
+Over time caches have become more powerful, flexible and complex 
+However, this increased utility means that changes made to configuration need careful consideration and it is not always obvious what the consequences of making a change would be.
+Even when the changes are well understood, the tradeoff between speed and accuracy (such as with market data) needs to be fully appreciated.
 
-##Todo
+With Groundhog changes can be tested out and the consequences evaluated before commiting to live.
+
+## Todo
 - add error handling
 - test with wider variety of logs 
 - make a self-standing results logger (csv?)
