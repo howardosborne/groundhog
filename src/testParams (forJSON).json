@@ -1,0 +1,5 @@
+{
+    "testSchedule":"../test/schedules/1586295781926.test",
+    "testScheduleFormat":"json",
+    "filter":".*"
+}

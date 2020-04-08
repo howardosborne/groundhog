@@ -1,0 +1,7 @@
+{
+    "protocol":"http", 
+    "port":8120,
+    "responseCode": 200,
+    "responseMessage":"Howdy",
+    "responseHeaders": "{'Content-Type': 'text/html'}"
+}
