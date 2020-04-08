@@ -12,7 +12,7 @@ Even when the changes are well understood, the tradeoff between speed and accura
 
 With Groundhog changes can be tested out and the consequences evaluated before commiting to live.
 
-##how does it work?
+## how does it work?
 there are four possible activities
 1. Build a schedule
 Run buildSchedule (after changing the parameters in the buildParams file to point to your access log)
@@ -28,12 +28,12 @@ Run runTest.js (after changing the paramtrs in testParams)
 4. Analyse results
 A results file will be created for each test which collates what happened from the client's perspective. However, the really interesting stuff will be in the web cache's access logs.
 
-##Can it be used for load testing the whole system?
+## Can it be used for load testing the whole system?
 Yes - to a point
 
 Testing end applications is best left to tools like JMeter, Gatling, Locust and LoadRunner. This is because applications often contain logic and security which the testing tool has to follow. This could be added to this tool (I'm seriously thinking about it), but even then, creating test 'shapes' to cover scenarios that have not happened before in live is done well by tools like JMeter and why remake what already works well?
 
-##Why Node?
+## Why Node?
 It's good at this kind of thing. Python could also be a good contender...
 
 ## Todo

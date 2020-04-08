@@ -1,0 +1,24 @@
+{
+  "name": "groundhog",
+  "version": "0.1.0",
+  "description": "a utility for testing web caches",
+  "main": "buildSchedule.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node groundhog.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/howardosborne/groundhog.git"
+  },
+  "keywords": [
+    "webcache",
+    "test"
+  ],
+  "author": "Howard Osborne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/howardosborne/groundhog/issues"
+  },
+  "homepage": "https://github.com/howardosborne/groundhog#readme"
+}
