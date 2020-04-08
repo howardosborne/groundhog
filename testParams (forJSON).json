@@ -1,0 +1,5 @@
+{
+    "testScript":"../test/1586295781926.test",
+    "testScriptFormat":"json",
+    "filter":".*"
+}
