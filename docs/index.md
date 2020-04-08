@@ -1,4 +1,6 @@
 # Groundhog
+![alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTdHj6s_E69R196y6HQdEYQWco4pdXSuO0RwelCgNwABpJtzJY4&usqp=CAU "groundhog")
+
 Groundhog is a utility for testing the impact of changes made to webcaches.
 It works by taking the requests made in access logs and providing a user-friendly way to 
 replay part or all of the logs.
