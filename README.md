@@ -82,7 +82,7 @@ Before building a schedule, the parameters need to be set
 
 A typical buildParams file will look like this:
 
-'''javascript
+```javascript
 {
     "log":"../test/logs/example_access.log", 
     "delimiter":"|", 
@@ -96,7 +96,7 @@ A typical buildParams file will look like this:
     "testScheduleFormat":"json",
     "filter":".*"
 }
-'''
+```
 
 ### Test parameters
 The parameters needed for running a test depend on whether you have chosen to use the CSV or JSON formats for the test schedule.
@@ -109,7 +109,7 @@ There are three keys common to both formats:
 The CSV  format requires an extra key, "csvformat", which is used to set which fields in the file are to be used.
 
 ####CSV Example
-'''javascript
+```javascript
 {
     "testSchedule":"../test/schedules/example_csv_schedule.csv",
     "testScheduleFormat":"csv",
@@ -124,14 +124,13 @@ The CSV  format requires an extra key, "csvformat", which is used to set which f
     "port":6
     }
 }
+```
 
-
-'''
 #### JSON example
-'''javascript
+```javascript
 {
     "testSchedule":"../test/schedules/example_json_schedule.json",
     "testScheduleFormat":"json",
     "filter":".*"
 }
-'''
+```
