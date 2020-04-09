@@ -1,16 +1,22 @@
-Groundhog is a utility for testing the impact of changes made to webcaches.
+Groundhog is a utility for testing the impact of configuration changes made to web caches.
 
-It works by taking the requests made in access logs and providing a user-friendly way to 
-replay part or all of the log.
+It works by taking the requests logged in access (or web) logs and providing a user-friendly way to 
+replay part or all of the log in a test environment.
 
 The results can then be chewed over to determine whether to promote the configuration change to live or tweak it some more.
 
-## Why use it?
-Caching is a fundamental part of performance optimisation and over time caches have become more powerful, flexible and complex. However, this increased utility has meant that configuration changes need careful consideration and it is not always obvious what the consequences of making a change would be. Even when the changes are well understood, the tradeoff between speed and accuracy (such as with time-sensitive data) needs to be fully appreciated.
+## Why do we need to test web cache configuration changes?
+Caches are fundamental to website performance.
+
+Over time web caches have become more powerful and flexible. However, this increased utility has meant that configuration changes need careful consideration and it is not always obvious what the consequences of making a change would be.
+
+Even when the changes are well understood, the trade-off between speed and accuracy (such as with time-sensitive data) still needs to be fully thought through.
+
+So how can we do this?
 
 With Groundhog changes can be tested out and the consequences evaluated before commiting to live.
 
-## How to use it
+## How to use it?
 1. Pick a web cache access log (or even a web server log) to use.
 2. Build a test schedule
 ... Change the parameters in the buildParams.json file to point to your access log and make any other changes you wish (see section on parameters).
@@ -108,7 +114,7 @@ There are three keys common to both formats:
 
 The CSV  format requires an extra key, "csvformat", which is used to set which fields in the file are to be used.
 
-####CSV Example
+#### CSV Example
 ```javascript
 {
     "testSchedule":"../test/schedules/example_csv_schedule.csv",
