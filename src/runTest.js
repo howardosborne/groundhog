@@ -20,22 +20,17 @@ exports.runTest = function runTest(testParams = './testParams.json'){
         };
         Object.assign(result,options);
         const req = http.request(options, (res) => {
-            result["statusCode"] = res.statusCode; 
-            res.on('data', (d) => {});
-                result["outcome"] = "error"
+            if(result["outcome"] != "error"){result["outcome"] = "pass"};
+            result["statusCode"] = res.statusCode;
+            console.log(result["outcome"], result.path)
+            logger.logResult(result);
             });
             req.on('error', (e) => {
                 console.error(e);
                 result["outcome"] = "error"
                 result["details"] = e
             });
-            req.end(log);
-            function log(){
-                if(result["outcome"] != "error"){result["outcome"] = "pass"};
-                console.log(result["outcome"], result.path)
-                logger.logResult(result);
-            }
-            
+            req.end();
         }
 
 
@@ -46,6 +41,7 @@ exports.runTest = function runTest(testParams = './testParams.json'){
         function scheduleTest(value, index, array) {
             setTimeout(makeRequest, value.delay, value.protocol, value.port, value.method, value.hostname, value.path);
         }
+        return "done";
     }
     function runCSVBasedTest(){
         var lineReader = require('readline').createInterface({
@@ -60,6 +56,7 @@ exports.runTest = function runTest(testParams = './testParams.json'){
                 setTimeout(makeRequest, timestamp, fields[config.csvformat.protocol], fields[config.csvformat.port], fields[config.csvformat.method], fields[config.csvformat.hostname], fields[config.csvformat.path]);
             }
         });
+        return "done";
     }
 
     if(config.testScheduleFormat=="csv"){runCSVBasedTest();}

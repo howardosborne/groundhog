@@ -1,5 +1,5 @@
 {
-    "testSchedule":"../test/schedules/1586291475684.test",
+    "testSchedule":"../test/schedules/example_csv_schedule.csv",
     "testScheduleFormat":"csv",
     "filter":".*",
     "csvformat":{

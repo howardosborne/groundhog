@@ -1,5 +1,5 @@
 {
-    "testSchedule":"../test/schedules/1586344349376.json",
+    "testSchedule":"../test/schedules/example_json_schedule.json",
     "testScheduleFormat":"json",
     "filter":".*"
 }
