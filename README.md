@@ -53,7 +53,7 @@ Testing end applications is best left to tools like JMeter, Gatling, Locust and 
 This is because applications often contain logic and security which the testing tool has to follow. This could be added to this tool (I'm seriously thinking about it), but even then, creating test 'shapes' to cover scenarios that have not happened before in live is done well by tools like JMeter and why remake what already works well?
 
 ## Why Node?
-Nod is good at this kind of thing.
+Node is good at this kind of thing.
 
 ## Why call it Groundhog?
 Sometimes you just have to replay a day over and over again (or part of it) until you get it right.

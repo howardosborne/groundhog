@@ -4,7 +4,7 @@
   "description": "a utility for testing web caches",
   "main": "buildSchedule.js",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha --timeout 10000",
     "start": "node groundhog.js"
   },
   "repository": {

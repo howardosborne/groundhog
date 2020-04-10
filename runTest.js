@@ -1,4 +1,6 @@
-exports.runTest = function runTest(testParams = './testParams.json'){
+var status = "not started";
+exports.getStatus = function (){return status;}
+exports.runTest = function runTest(testParams = './params/testParams.json'){
     var config = require(testParams);
     var fs = require('fs');
     var logger = require('./logger.js');
@@ -35,15 +37,17 @@ exports.runTest = function runTest(testParams = './testParams.json'){
 
 
     function runJSONBasedTest(){
+        status = "in progress";
         var testSchedule = require(config.testSchedule);
         //console.log(testSchedule)
         testSchedule.forEach(scheduleTest);
         function scheduleTest(value, index, array) {
             setTimeout(makeRequest, value.delay, value.protocol, value.port, value.method, value.hostname, value.path);
         }
-        return "done";
+
     }
     function runCSVBasedTest(){
+        status = "in progress";
         var lineReader = require('readline').createInterface({
             input: fs.createReadStream(config.testSchedule)
         });
@@ -56,10 +60,12 @@ exports.runTest = function runTest(testParams = './testParams.json'){
                 setTimeout(makeRequest, timestamp, fields[config.csvformat.protocol], fields[config.csvformat.port], fields[config.csvformat.method], fields[config.csvformat.hostname], fields[config.csvformat.path]);
             }
         });
-        return "done";
     }
 
     if(config.testScheduleFormat=="csv"){runCSVBasedTest();}
     else if(config.testScheduleFormat=="json"){runJSONBasedTest();}
-    else{console.log("test Schedule format not recognised");}
+    else{
+        console.log("test Schedule format not recognised");
+        status = "dodgy test schedule format";
+    }
 }

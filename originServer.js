@@ -1,4 +1,4 @@
-var config = require('./serverParams.json');
+var config = require('./params/serverParams.json');
 const http = require(config.protocol);
 
 const requestListener = function (req, res) {

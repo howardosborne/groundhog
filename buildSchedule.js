@@ -1,9 +1,14 @@
-exports.buildSchedule = function buildSchedule(configFile = './buildParams.json'){
+var testScheduleFilename = "", status = "not started";
+exports.testScheduleFilename;
+exports.status;
+exports.getTestScheduleFilename = function(){return testScheduleFilename;}
+exports.buildSchedule = function buildSchedule(configFile = './params/buildParams.json'){
+    status = "started";
     var config = require(configFile);
     var fs = require('fs');
     const regex = RegExp(config.filter);
     var timeFrom = undefined;
-    const testScheduleFilename = "schedule_" + Date.now().toString() + "." + config.testScheduleFormat
+    testScheduleFilename = "schedule_" + Date.now().toString() + "." + config.testScheduleFormat
     var requests = [];
 
     var lineReader = require('readline').createInterface({
@@ -41,14 +46,15 @@ exports.buildSchedule = function buildSchedule(configFile = './buildParams.json'
             function appendToFile(value, index, array) {
                 var testEntry = value.delay + " " + value.method + " " + value.hostname + " " + value.path + " " + value.version + " " + value.protocol + " " + value.port
                 fs.appendFileSync(testScheduleFilename, testEntry + "\n");
-                return "done";
+                status = "done";
+
             }
 
         }
         else{
             var output = JSON.stringify(requests);
             fs.appendFileSync(testScheduleFilename, output);
-            return "done";
+            status = "done";
         }
     }
     );
