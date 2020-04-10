@@ -25,7 +25,7 @@ describe('Build Schedule', function() {
   describe('Run Test', function() {
     describe('#runTest', function() {
       it('should run a test schedule', function(done) {
-        var test = require('../RunTest.js');
+        var test = require('../runTest.js');
         test.runTest();
         setTimeout(checkStatus,5000);
         function checkStatus(){
