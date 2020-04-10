@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/howardosborne/groundhog/issues"
   },
-  "homepage": "https://github.com/howardosborne/groundhog#readme"
+  "homepage": "https://github.com/howardosborne/groundhog#readme",
+  "devDependencies": {
+    "mocha": "^7.1.1"
+  }
 }
