@@ -33,10 +33,13 @@ exports.buildSchedule = function buildSchedule(configFile = './params/buildParam
                 destinationHost = fields[config.remote_addr]
             }
             var requestParts = fields[config.request].split(" ");
-            var request = {"delay":delay.toString(), "method": requestParts[0], "hostname": destinationHost, "path": requestParts[1], "version": requestParts[2], "protocol": config.protocol, "port": config.port}
+            var request = {
+                "delay":delay.toString(), 
+                "method": requestParts[0], "hostname": destinationHost, "path": requestParts[1], 
+                "version": requestParts[2], "protocol": config.protocol, "port": config.port,
+                "headers": "", "cookies": ""
+            }
             requests.push(request);
-            //var testEntry = delay.toString() + " " + requestParts[0] + " " + destinationHost + " " + requestParts[1] + " " + requestParts[2] + " " + config.protocol + " " + config.port
-            //fs.appendFileSync(testScheduleFilename, testEntry + "\n");
         }
     });
     lineReader.on('close', function close(){

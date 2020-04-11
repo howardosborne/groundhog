@@ -16,7 +16,7 @@ So how can we do this?
 
 With Groundhog changes can be tested out and the consequences evaluated before commiting to live.
 
-## How to use it?
+## How to use it
 1. Pick a web cache access log (or even a web server log) to use.
 2. Build a test schedule
 ... Change the parameters in the buildParams.json file to point to your access log and make any other changes you wish (see section on parameters).
@@ -45,10 +45,10 @@ node ./groundhog.js runTest
 5. Analyse results
 ... A results file will be created for each test which collates what happened from the client's perspective. However, the really interesting stuff will be in the web cache's access logs.
 
-## Can it be used for load testing more than just the cache?
-Yes - to a point
+## Can it be used for testing more than the cache?
+Yes - to a point...
 
-Testing end applications is best left to tools like JMeter, Gatling, Locust and LoadRunner.
+Testing the performance of applications is best left to tools like [JMeter](https://jmeter.apache.org), [Gatling](https://gatling.io/), [Locust](https://locust.io/) and [LoadRunner](https://en.wikipedia.org/wiki/LoadRunner).
 
 This is because applications often contain logic and security which the testing tool has to follow. This could be added to this tool (I'm seriously thinking about it), but even then, creating test 'shapes' to cover scenarios that have not happened before in live is done well by tools like JMeter and why remake what already works well?
 
@@ -65,17 +65,13 @@ yep - get in touch
 CSV files are simple to edit manually. JSON is powerful and flexible but a bit trickier to edit.
 
 ## Todo
-- add error handling
+- review error handling
 - test with wider variety of logs 
-- make a self-standing results logger (csv?)
-- consider a full results tree (json?)
+- consider making a full results tree (json?)
 - add 'intelligent' origin server feature which provides response codes as set in access logs
-
-### for JSON-based schedule
-- put in headers 
-- put in cookies
-- put in a before execute and after execute function
-- think about wrapping up run and build test features
+- consider adding 'before execute' and 'after execute' functions (for JSON based schedule)
+- think about providing a noob-friendly web interface for building test schedules and running tests
+- consider adding an access log analyser (with comparison between two access logs)
 
 ## Parameters
 Running Groundhog needs paramters correctly setting to it knows that to do.
