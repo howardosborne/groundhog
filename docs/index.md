@@ -58,7 +58,7 @@ Node is good at this kind of thing.
 ## Why call it Groundhog?
 Sometimes you just have to replay a day over and over again (or part of it) until you get it right.
 
-## Can I help?
+## Can I help/contribute?
 yep - get in touch
 
 ## Why both CSV and JSON formats?
