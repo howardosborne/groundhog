@@ -21,9 +21,9 @@ With Groundhog changes can be tested out and the consequences evaluated before c
 
 * Build a test schedule
 
-...Change the parameters in the buildParams.json file to point to your access log and make any other changes you wish (see section on parameters).
+   Change the parameters in the buildParams.json file to point to your access log and make any other changes you wish (see section on parameters).
 
-...Decide whether to make a simple csv schedule which is easy to edit but has limited capability
+   Decide whether to make a simple csv schedule which is easy to edit but has limited capability
 or a json schedule which has the possibility of richer features.
 
 ```
@@ -32,9 +32,9 @@ node ./groundhog.js buildSchedule
 
 * Set up test origin servers
 
-...The origin server (the server the web cache is trying to relieve) may not be usable for testing. This could be because it is not available in your test environment or the application logic may lead to errors when key test information is not provided.
+   The origin server (the server the web cache is trying to relieve) may not be usable for testing. This could be because it is not available in your test environment or the application logic may lead to errors when key test information is not provided.
 
-...Set the configuring parameters in serverParams
+   Set the configuring parameters in serverParams
 
 ```
 node ./originServer.js
@@ -42,7 +42,7 @@ node ./originServer.js
 
 * Run a test
 
-...Set the parameters in testParams to choose a test schedule and any other settings you may wish to use.
+   Set the parameters in testParams to choose a test schedule and any other settings you may wish to use.
 
 ```
 node ./groundhog.js runTest
@@ -50,7 +50,7 @@ node ./groundhog.js runTest
 
 * Analyse results
 
-...A results file will be created for each test which collates what happened from the client's perspective. However, the really interesting stuff will be in the web cache's access logs.
+   A results file will be created for each test which collates what happened from the client's perspective. However, the really interesting stuff will be in the web cache's access logs.
 
 ## Can it be used for testing more than the cache?
 Yes - to a point...
